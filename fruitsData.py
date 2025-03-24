@@ -1,22 +1,33 @@
 def main():
+    # Initialize an empty dictionary to store fruit data
     fruits = {}
-    
-    fruit_num = int(input("Please enter how many fruits would you like to record: "))
 
-    # Collect data for the number of fruits above from the user. Should include name, color, 
-    # weight in lbs, and price. Once each set of data points is collected
-    # Think about what kind of control structure to create to complete this process
-    for fruits in fruit_num:
-        fruits['set', fruit_num] = [input("Name of fruit: "), input("Fruit's color: "), int(input("Weight of Fruit")), float(input("Price of fruit: "))]
+    # Get the number of fruits to input
+    num_fruits = int(input("How many fruits would you like to enter? "))
 
-        # After each set of input statements, store the data in the dictionary
-        
+    # Collect data for each fruit
+    for x in range(num_fruits):
+        name = input("Enter the fruits name: ").strip()
+        color = input(f"Enter the color of {name}: ").strip()
+        weight = float(input(f"Enter the average weight of {name} (in lbs): "))
+        price = float(input(f"Enter the price per pound of {name} ($): "))
 
-    # Output each of the fruit's data as a vertical list. This happens one time
-    # for each of the fruits in the dictionary. 
-    for fruit_num, name, color, weight, price in fruits.items():
-        print(f"The {name} is {color}, weighs {weight:.2f} lbs, and costs ${price:.2f}.")
+        # Store the data in the dictionary
+        fruits[name] = {
+            'Color': color,
+            'Average Weight': weight,
+            'Price per Pound': price
+        }
+
+    # Output the fruit data
+    print("\nFruit Data Overview:\n")
+
+    for fruit, details in fruits.items():
+        print(f"Fruit: {fruit}")
+        print(f"Color: {details['Color']}")
+        print(f"Average Weight: {details['Average Weight']}")
+        print(f"Price per Pound: ${details['Price per Pound']}")
+        print("-" * 20)
 
 if __name__ == "__main__":
     main()
-

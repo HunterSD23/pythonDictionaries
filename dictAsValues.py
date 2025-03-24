@@ -35,3 +35,8 @@ for student in range(num_students):
     }
 
 print(students)
+
+'''
+task -> Key for the dictionary
+task1, task2, task3,  
+'''
